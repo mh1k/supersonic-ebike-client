@@ -35,7 +35,7 @@ const Register = () => {
                 });
 
                 const newUser = { user: result?.user, name, email: result?.user?.email }
-                fetch('https://supersonic-ebike-server.onrender.com/users', {
+                fetch('http://localhost:5000/users', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

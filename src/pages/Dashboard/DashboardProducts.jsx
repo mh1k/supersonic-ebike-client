@@ -7,7 +7,7 @@ const DashboardProducts = () => {
     const [bikes, setbikes] = useState([]);
 
     useEffect(() => {
-        fetch("https://supersonic-ebike-server.onrender.com/ebike")
+        fetch("http://localhost:5000/ebike")
             .then((res) => res.json())
             .then((data) => setbikes(data));
     }, []);

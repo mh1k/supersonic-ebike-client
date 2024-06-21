@@ -2,6 +2,7 @@
 const Features = () => {
     return (
         <div>
+            <h1 className="text-center font-bold text-5xl my-20">Smart connect</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 justify-center items-center gap-8 mx-10 my-10">
                 <div className="relative  flex justify-center items-center overflow-hidden py-14 shadow-lg rounded-lg bg-[#e7f4f0]">
                     <img

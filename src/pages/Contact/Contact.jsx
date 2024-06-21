@@ -1,6 +1,25 @@
 /* eslint-disable react/no-unescaped-entities */
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
+
+
+    const sendEmail = e => {
+
+        e.preventDefault();
+        console.log(e.target.text.value);
+        emailjs.sendForm('service_nvm78yu', 'template_7hamkzm', e.target, 'd4Q0kOiZUrDPFXS74')
+            .then((result) => {
+                console.log(result.text);
+
+            }, (error) => {
+                console.log(error.text);
+            });
+
+            e.target.to_name.value =""
+            e.target.from_name.value =""
+            e.target.message.value =""
+    }
 
 
     return (
@@ -13,11 +32,12 @@ const Contact = () => {
                 </div>
                 <div className="bg-[#f8f3ec] p-8 rounded-lg drop-shadow-lg w-full sm:mt-10 max-w-md">
                     {/* <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Contact Us</h2> */}
-                    <form className="space-y-4">
+                    <form onSubmit={sendEmail} className="space-y-4">
                         <div>
                             <label className="block text-gray-700">Name</label>
                             <input
                                 type="text"
+                                name='to_name'
                                 required
                                 className="w-full px-4 py-2 mt-2 border rounded-md input input-bordered"
                                 placeholder="Your Name"
@@ -27,6 +47,7 @@ const Contact = () => {
                             <label className="block text-gray-700">Email</label>
                             <input
                                 type="email"
+                                name='from_name'
                                 required
                                 className="w-full px-4 py-2 mt-2 border rounded-md input input-bordered "
                                 placeholder="Your Email"
@@ -36,6 +57,7 @@ const Contact = () => {
                             <label className="block text-gray-700">Message</label>
                             <textarea
                                 required
+                                name='message'
                                 className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-gray-300 focus:ring-2  focus:ring-gray-300 input-bordered"
                                 rows="4"
                                 placeholder="Your Message"

@@ -19,7 +19,7 @@ const AddProduct = () => {
         const data = { name, imageLink, price, details };
         // console.log(data);
 
-        await fetch("https://supersonic-ebike-server.onrender.com/ebike", {
+        await fetch("http://localhost:5000/ebike", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
