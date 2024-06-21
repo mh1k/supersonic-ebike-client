@@ -41,14 +41,14 @@ const router = createBrowserRouter([
             {
                 path: "/ebike",
                 element: <Ebike></Ebike>,
-                // loader: () => fetch("http://localhost:5000/ebike"),
+                // loader: () => fetch("https://supersonic-ebike-server.onrender.com/ebike"),
 
             },
             {
                 path: "/ebike/:id",
                 element: <EbikeDetails></EbikeDetails>,
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/ebike/${params.id}`),
+                    fetch(`https://supersonic-ebike-server.onrender.com/ebike/${params.id}`),
 
             },
             {
@@ -95,14 +95,14 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/profile/edit-profile/:id",
                 element: <EditProfile></EditProfile>,
-                loader: ({ params }) => fetch(`http://localhost:5000/users/get/${params.id}`),
+                loader: ({ params }) => fetch(`https://supersonic-ebike-server.onrender.com/users/get/${params.id}`),
             },
             {
                 path: "/dashboard/products/edit-product/:id",
                 element: <EditProduct></EditProduct>,
-                loader: ({ params }) => fetch(`http://localhost:5000/ebike/${params.id}`),
+                loader: ({ params }) => fetch(`https://supersonic-ebike-server.onrender.com/ebike/${params.id}`),
             },
-         
+
 
 
         ]

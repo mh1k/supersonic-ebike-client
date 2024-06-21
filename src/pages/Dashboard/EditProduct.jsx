@@ -27,7 +27,7 @@ const EditProduct = () => {
         const data = { name, price, imageLink, productDetails };
         console.log(data);
 
-        await fetch(`http://localhost:5000/ebike/${bike._id}`, {
+        await fetch(`https://supersonic-ebike-server.onrender.com/ebike/${bike._id}`, {
             method: "PATCH",
             headers: {
                 "Content-type": "application/json",

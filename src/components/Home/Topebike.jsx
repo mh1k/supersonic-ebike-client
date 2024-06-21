@@ -6,7 +6,7 @@ const Topebike = () => {
     const [bike, setBike] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/ebike")
+        fetch("https://supersonic-ebike-server.onrender.com/ebike")
             .then(res => res.json())
             .then(data => setBike(data))
     }, [])

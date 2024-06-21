@@ -35,7 +35,7 @@ const Register = () => {
                 });
 
                 const newUser = { user: result?.user, name, email: result?.user?.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://supersonic-ebike-server.onrender.com/users', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'
@@ -43,7 +43,10 @@ const Register = () => {
                     body: JSON.stringify(newUser)
                 })
                     .then((res) => res.json())
-                    .then((data) => console.log(data))
+                    .then((data) => {
+                        console.log("fronted token", data);
+                        localStorage.setItem('token', data?.token)
+                    })
 
 
 

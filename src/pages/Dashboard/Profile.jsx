@@ -10,7 +10,7 @@ const Profile = () => {
     const [userInfo, setUserInfo] = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`)
+        fetch(`https://supersonic-ebike-server.onrender.com/users/${user?.email}`)
             .then((res) => res.json())
             .then((data) => setUserInfo(data));
     }, [user])
@@ -72,7 +72,7 @@ const Profile = () => {
                     </div>
                     <div className="flex  justify-between items-center">
                         <Link to={`/dashboard/profile/edit-profile/${userInfo?._id}`}><button className="btn text-white bg-gray-600 hover:bg-gray-700">Edit Profile</button></Link>
-                        <button onClick={()=>changePassword()} className="btn text-white bg-gray-600 hover:bg-gray-700">Change Password</button>
+                        <button onClick={() => changePassword()} className="btn text-white bg-gray-600 hover:bg-gray-700">Change Password</button>
                     </div>
 
                 </div>

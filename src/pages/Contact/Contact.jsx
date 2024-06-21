@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
 
@@ -7,18 +8,24 @@ const Contact = () => {
     const sendEmail = e => {
 
         e.preventDefault();
-        console.log(e.target.text.value);
+        console.log(e.target.to_name.value);
         emailjs.sendForm('service_nvm78yu', 'template_7hamkzm', e.target, 'd4Q0kOiZUrDPFXS74')
             .then((result) => {
+                Swal.fire({
+                    text: "successfully sent.",
+                    icon: "success",
+                    timer: 3000,
+                    showConfirmButton: false
+                });
                 console.log(result.text);
 
             }, (error) => {
                 console.log(error.text);
             });
 
-            e.target.to_name.value =""
-            e.target.from_name.value =""
-            e.target.message.value =""
+        e.target.to_name.value = ""
+        e.target.from_name.value = ""
+        e.target.message.value = ""
     }
 
 

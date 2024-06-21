@@ -11,7 +11,7 @@ const Ebike = () => {
     const [ebike, setEbike] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/ebike?search=${searchbike}`)
+        fetch(`https://supersonic-ebike-server.onrender.com/ebike?search=${searchbike}`)
             .then(res => res.json())
             .then(data => setEbike(data))
     }, [searchbike])
@@ -34,7 +34,7 @@ const Ebike = () => {
                         {/* <p className="text-lg mb-5 mt-20 sm:mt-0">Service</p> */}
                         <h1 className="mb-8 text-5xl font-semibold">Easy ride, easy go</h1>
                         {/* <p>No matter where you ride, we have got you and your bike covered. With a range of services to support you at every turn, you can keep your bike in tune, protect it against theft, and get help whenever and wherever you need it.</p> */}
-                        
+
                         {/* search method */}
                         <div className="flex justify-center ">
                             <label className="input  input-bordered flex items-center w-3/4 gap-2">

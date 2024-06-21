@@ -19,7 +19,7 @@ const Dashboardebike = ({ bike, onDeleteProduct }) => {
             if (result.isConfirmed) {
 
                 // eslint-disable-next-line react/prop-types
-                fetch(`http://localhost:5000/ebike/${bike._id}`, {
+                fetch(`https://supersonic-ebike-server.onrender.com/ebike/${bike._id}`, {
                     method: "DELETE",
                     headers: {
                         "Content-type": "application/json",

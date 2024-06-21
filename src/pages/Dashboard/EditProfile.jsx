@@ -18,7 +18,7 @@ const EditProfile = () => {
         const data = { name, age, mobile };
         console.log(data);
 
-        await fetch(`http://localhost:5000/users/${user.email}`, {
+        await fetch(`https://supersonic-ebike-server.onrender.com/users/${user.email}`, {
             method: "PATCH",
             headers: {
                 "Content-type": "application/json",

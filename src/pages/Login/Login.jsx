@@ -51,7 +51,7 @@ const Login = () => {
             .then((result) => {
                 // console.log(result);
                 const newUser = { user: result?.user, name: result?.user?.displayName, email: result?.user?.email }
-                fetch('http://localhost:5000/users', {
+                fetch('https://supersonic-ebike-server.onrender.com/users', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'
@@ -60,11 +60,11 @@ const Login = () => {
                 })
                     .then((res) => res.json())
                     .then((data) => {
-                        console.log("fronted token", data);
+                        // console.log("fronted token", data);
                         localStorage.setItem('token', data?.token)
                     })
 
-                console.log(result.user);
+                // console.log(result.user);
                 navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {

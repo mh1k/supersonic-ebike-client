@@ -9,7 +9,7 @@ const Dashboard = () => {
     const [userData, setUsersData] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/ebike")
+        fetch("https://supersonic-ebike-server.onrender.com/ebike")
             .then((res) => res.json())
             .then((data) => {
                 const newData = data?.map(bike => {
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/users")
+        fetch("https://supersonic-ebike-server.onrender.com/users")
             .then((res) => res.json())
             .then((data) => setUsersData(data));
     }, [])
